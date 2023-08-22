@@ -10,10 +10,9 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
+	int count = 0;
 
 	va_start(args, format);
-
-	int count = 0;
 
 	if (format == NULL)
 		return (-1);
@@ -29,7 +28,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			write(1, format, 1);
-			count_characters(&count, 1);
+			count++;
 		}
 
 		format++;
