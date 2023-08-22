@@ -25,6 +25,12 @@ void handle_format(va_list args, char format, int *count)
 		case 's':
 			str = va_arg(args, const char *);
 			num_chars = 0;
+			if (str == NULL)
+			{
+				write(1, "(null)", 6);
+				count_characters(count, 6);
+				break;
+			}
 			while (*str)
 			{
 				write(1, str, 1);
