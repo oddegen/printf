@@ -12,7 +12,7 @@ void handle_format(va_list args, char format, int *count)
 {
 	char c;
 	const char *str;
-	int num_chars;
+	int num_chars, num;
 	char percent;
 
 	switch (format)
@@ -37,6 +37,11 @@ void handle_format(va_list args, char format, int *count)
 			percent = '%';
 			write(1, &percent, 1);
 			count_characters(count, 1);
+			break;
+		case 'd':
+		case 'i':
+			num = va_arg(args, int);
+			print_integer(num, count);
 			break;
 		default:
 			percent = '%';

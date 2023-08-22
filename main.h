@@ -8,5 +8,7 @@
 int _printf(const char *format, ...);
 void count_characters(int *count, int num_chars);
 void handle_format(va_list args, char format, int *count);
+void print_integer(int num, int *count);
+void print_digit(int digit, int *count);
 
 #endif
