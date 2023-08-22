@@ -18,7 +18,7 @@ void handle_format(va_list args, char format, int *count)
 	switch (format)
 	{
 		case 'c':
-			c = (char)va_arg(args, int);
+			c = va_arg(args, char);
 
 			write(1, &c, 1);
 			count_characters(count, 1);
