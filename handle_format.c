@@ -19,7 +19,6 @@ void handle_format(va_list args, char format, int *count)
 	{
 		case 'c':
 			c = (char)va_arg(args, int);
-
 			write(1, &c, 1);
 			count_characters(count, 1);
 			break;
@@ -30,9 +29,7 @@ void handle_format(va_list args, char format, int *count)
 				write(1, "(null)", 1);
 				break;
 			}
-
 			num_chars = 0;
-
 			while (*str)
 			{
 				write(1, str, 1);
@@ -43,7 +40,6 @@ void handle_format(va_list args, char format, int *count)
 			break;
 		case '%':
 			percent = '%';
-
 			write(1, &percent, 1);
 			count_characters(count, 1);
 			break;
