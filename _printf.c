@@ -24,35 +24,12 @@ int _printf(const char *format, ...)
 		{
 			format++;
 
-			switch (*format)
-			{
-				case 'c':
-					char c = (char)va_arg(args, char);
-
-					write(1, &c, 1);
-					count++;
-					break;
-				case 's':
-					const char *s = va_arg(args, const char *);
-
-					while (*s)
-					{
-						write(1, s, 1);
-						s++;
-						count++;
-					}
-					break;
-				case '%':
-					char percent = '%';
-
-					write(1, &percent, 1);
-					break;
-			}
+			handle_format(args, *format, &count);
 		}
 		else
 		{
 			write(1, format, 1);
-			count++;
+			count_characters(&count, 1);
 		}
 
 		format++;
