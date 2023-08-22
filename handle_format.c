@@ -41,5 +41,11 @@ void handle_format(va_list args, char format, int *count)
 			write(1, &percent, 1);
 			count_characters(count, 1);
 			break;
+		default:
+			percent = '%';
+			write(1, &percent, 1);
+			write(1, &format, 1);
+			count_characters(count, 2);
+			break;
 	}
 }
