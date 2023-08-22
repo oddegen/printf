@@ -12,7 +12,7 @@ void handle_format(va_list args, char format, int *count)
 {
 	char c;
 	const char *str;
-	int num_chars;
+	int num_chars = 0;
 	char percent;
 
 	switch (format)
