@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include "main.h"
+#include <limits.h>
+#include "../main.h"
 
 int main(void)
 {
@@ -35,6 +36,30 @@ int len, len2;
    len =  _printf("%");
    len2 =  printf("%");
     printf("\n[%d]:[%d]\n", len, len2);
+
+    _printf("Positive integer: %d\n", 42);
+    printf("Positive integer: %d\n", 42);
+
+    _printf("Negative integer: %d\n", -42);
+    printf("Negative integer: %d\n", -42);
+
+    _printf("Zero: %d\n", 0);
+    printf("Zero: %d\n", 0);
+
+    _printf("INT_MIN: %d\n", INT_MIN);
+    printf("INT_MIN: %d\n", INT_MIN);
+
+    _printf("INT_MAX: %d\n", INT_MAX);
+    printf("INT_MAX: %d\n", INT_MAX);
+
+    _printf("Leading zeros: %d\n", 007);
+    printf("Leading zeros: %d\n", 007);
+
+    _printf("Large positive value: %d\n", 2147483647);
+    printf("Large positive value: %d\n", 2147483647);
+
+    _printf("Large negative value: %d\n", -2147483648);
+    printf("Large negative value: %d\n", -2147483648);
     return (0);
 }
 

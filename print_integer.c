@@ -17,33 +17,28 @@ void print_digit(int digit, int *count)
 }
 
 /**
- * print_integer - converts integer to its repective digits
+ * print_integer - prints the integers
  * @num: the integer
  * @count: pointer to the total char count
  *
  * Return: void
  */
 
-void print_integer(int num, int *count)
+void print_integer(unsigned int num, int *count)
 {
-	int divisor, digit;
+	int digit;
 
-	if (num < 0)
+	if ((int)num < 0)
 	{
 		write(1, "-", 1);
 		count_characters(count, 1);
-		num = -num;
-	}
-	divisor = 1;
-	while (num / divisor >= 10)
-	{
-		divisor *= 10;
+		num *= -1;
 	}
 
-	while (divisor > 0)
+	if (num / 10)
 	{
-		digit = (num / divisor) % 10;
-		print_digit(digit, count);
-		divisor /= 10;
+		print_integer(num / 10, count);
 	}
+	digit = num  % 10;
+	print_digit(digit, count);
 }
