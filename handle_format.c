@@ -36,6 +36,10 @@ void handle_format(va_list args, char format, int *count)
 			num = va_arg(args, int);
 			print_integer(num, count);
 			break;
+		case 'b':
+			num = va_arg(args, int);
+			print_binary(num, count);
+			break;
 		default:
 			percent = '%';
 			write(1, &percent, 1);

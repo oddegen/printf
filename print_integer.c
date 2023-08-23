@@ -39,6 +39,6 @@ void print_integer(unsigned int num, int *count)
 	{
 		print_integer(num / 10, count);
 	}
-	digit = num  % 10;
+	digit = num % 10;
 	print_digit(digit, count);
 }

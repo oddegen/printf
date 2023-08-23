@@ -60,6 +60,10 @@ int len, len2;
 
     _printf("Large negative value: %d\n", -2147483648);
     printf("Large negative value: %d\n", -2147483648);
+    
+   _printf("%b\n", 98);
+   printf("%b\n", 98);
+
     return (0);
 }
 
